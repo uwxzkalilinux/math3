@@ -4,11 +4,11 @@ import { PresentationData } from "../types";
 const getAiClient = () => {
   // Use process.env.API_KEY as mandated by guidelines.
   // This is configured in vite.config.ts to resolve correctly.
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    console.error("API Key is missing. Ensure VITE_GEMINI_API_KEY or VITE_API_KEY is set in Vercel and you have REDEPLOYED.");
-    throw new Error("API_KEY is not defined. Please check your environment variables.");
-  }
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("API Key is missing. Please check VITE_GEMINI_API_KEY in your .env file");
+}
   return new GoogleGenAI({ apiKey });
 };
 
