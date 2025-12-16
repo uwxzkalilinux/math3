@@ -1,0 +1,7 @@
+{
+  "name": "MathMind AI",
+  "description": "An advanced AI-powered educational platform focused on Mathematics, featuring deep reasoning, geometry visualization, homework scanning, and real-time concept search.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
